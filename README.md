@@ -41,7 +41,7 @@ project/
 
 ## 🌐 Live Demo
 
-👉 
+👉 https://sonu101994.github.io/blinkit-landing-page/
 ---
 
 ## 💻 GitHub Repository
