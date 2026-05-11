@@ -41,7 +41,7 @@ project/
 
 ## 🌐 Live Demo
 
-👉 
+👉 https://sonu101994.github.io/blinkit-landing-page/
 ---
 
 ## 💻 GitHub Repository
@@ -60,7 +60,7 @@ project/
 
 ## 📌 Note
 
-This is mainly a **HTML & CSS practice project**.  
+This is mainly a **HTML & CSS practice project**. 
 JavaScript is used only for a small slider feature.
 
 ---
