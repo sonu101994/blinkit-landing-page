@@ -837,7 +837,7 @@
     </footer>
 
     <script>
-        // Initialize carousel slider functionality for each product wrapper
+        
         document.querySelectorAll('.outer-wrapper').forEach(wrapper => {
             // Get carousel elements
             const itemRow = wrapper.querySelector('.snacks-item-row');
@@ -870,11 +870,14 @@
             // Get the size of a single item including gap
             const getViewSize = () => {
                 const item = document.querySelector(".snacks-item-row .add-items");
-                const style = window.getComputedStyle(item);
+                const style = window.getComputedStyle(itemRow);
                 const width = item.offsetWidth;
-                const gap = parseFloat(style.gap) || 0;
-                return width + gap;
+                 const gap = parseFloat(style.columnGap || style.gap || 0);
+                //  console.log(width);
+                 console.log(gap);
+                return width + gap+10;
             };
+            getViewSize();
 
             // Handle next button click to advance carousel
             nextBtn.addEventListener('click', () => {
@@ -894,18 +897,15 @@
 
             // Translate carousel items based on current index and items per view
             const moveSlider = () => {
-                const itemWidth = itemRow.children[0].offsetWidth;
-                const style = window.getComputedStyle(itemRow);
-                const gap = parseFloat(style.columnGap || style.gap || 0);
-                const step = itemWidth + gap + 10;
-
+               const step=getViewSize();
+            //    console.log(step);
                 itemRow.style.transform = `translateX(-${currentIndex * step * itemsPerView}px)`;
             };
             
             // Initialize slider position and calculate max index
             moveSlider();
             maxIndex = Math.ceil(totalItems / itemsPerView) - 1;
-        });
+        }); 
     </script>
 </body>
 
